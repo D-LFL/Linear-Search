@@ -1,0 +1,50 @@
+if __name__ == "__main__":
+    
+    from listing import items,list
+    solve = False
+    items #function creating the random list, put into a separate file not due to making the file easier to understand, but for me practising how to import files I have made in the future
+    print(list)
+    find = int(input("This is the list of randomly created values - what value do you want to search for?"))
+    
+    
+    pos = []
+    num = 0
+    for item in range(len(list)):
+        if find == list[item]:
+            pos.append(item + 1)
+            num +=1 
+
+    if num == 1:
+        print(f"One item found, it is in positition {pos}")
+    elif num > 1:
+        print(f"{num} items found, it is in posititions {pos}")
+    elif num == 0:
+        print("Value not found in list")
+    solve = True
+
+
+
+
+
+
+#List file since i dont know how to move this to a different file of a repository  (or if that is even a thing):
+
+from random import randint
+list = []
+amount = int(input("Enter the number of values in the list. "))
+def items(amount,list):
+    min = int(input("Enter the minimum number value that can be placed in the list. "))
+    max = int(input("Enter the maximum number value that can be placed in the list. "))
+    if amount < 0:
+        amount = amount*-1
+    elif amount ==0:
+        amount = 1
+    if min > max:
+        min,max = max,min
+        
+    for x in range(amount):
+        random = randint(min,max)
+        list.append(random)
+
+items(amount,list)
+
